@@ -1,9 +1,8 @@
-/*
- * Create own custom child version of JFrame,so can put code in constructor that will add components.
- */
-package swing_2;
+package swing_3;
 
 import javax.swing.SwingUtilities;
+
+import swing_3.MainFrame;
 
 public class App {
 
