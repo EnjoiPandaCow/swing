@@ -1,19 +1,15 @@
-package swing_7;
+package swing_8;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
+
 
 // Main frame is the controller it's connecting all of the components and telling them what to do
 public class MainFrame extends JFrame {
 	
-	private JButton btn;
 	private TextPanel textPanel;
 	private Toolbar toolbar; 
+	private FormPanel formPanel;
 	
 	public MainFrame() {
 	
@@ -23,14 +19,15 @@ public class MainFrame extends JFrame {
 		
 		toolbar = new Toolbar();
 		textPanel = new TextPanel();
+		formPanel = new FormPanel();
 		
-		// Wiring up components properly is in Section 1, Lecture 8
 		toolbar.setStringListener(new StringListener() {
 			public void textEmitted(String text) {
 				textPanel.appendText(text);
 			}
 		});	
 		
+		add(formPanel, BorderLayout.WEST);
 		add(toolbar, BorderLayout.NORTH);
 		add(textPanel, BorderLayout.CENTER);
 		
